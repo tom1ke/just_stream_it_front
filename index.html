@@ -3,51 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
         <title>Just Stream It</title>
     </head>
     <body>
-        <h1>JUST STREAM IT</h1>
 
-        <nav class="top-menu">
-            <ul>
-                <li>Accueil</li>
-                <li>Catégories</li>
-            </ul>
-        </nav>
+        <div class="top-page">
+            <h1>JUST STREAM IT</h1>
 
-        <section class="films">
+            <nav id="top-menu">
+                <a href="index.html" id="home">Accueil</a>
+                <div class="dropdown">
+                    <button class="drop-button">Catégories</button>
+                    <div class="dropdown-content">
+                        <a href="#most-rated">Mieux notés</a>
+                        <a href="#fantasy">Fantaisie</a>
+                        <a href="#sci-fi">Science-Fiction</a>
+                        <a href="#animation">Animation</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
-            <section class="category" id="best">
+        <div class="films">
+
+            <div id="best">
                 <h2>Meilleur film</h2>
+                <br><br>
                 <img src="" id="best-image" alt=""/>
-            </section>
+            </div>
             <br>
 
-            <section class="category" id="most-rated">
+            <div class="category" id="most-rated">
                 <h2>Films les mieux notés</h2>
                 <div class="image-container" id="most-rated-images"></div>
-            </section>
+            </div>
             <br>
 
-            <section class="category" id="fantasy">
+            <div class="category" id="fantasy">
                 <h2>Fantaisie</h2>
                 <div class="image-container" id="fantasy-images"></div>
-            </section>
+            </div>
             <br>
 
-            <section class="category" id="sci-fi">
-                <h2>Science Fiction</h2>
+            <div class="category" id="sci-fi">
+                <h2>Science-Fiction</h2>
                 <div class="image-container" id="sci-fi-images"></div>
-            </section>
+            </div>
             <br>
 
-            <section class="category" id="animation">
+            <div class="category" id="animation">
                 <h2>Animation</h2>
                 <div class="image-container" id="animation-images"></div>
-            </section>
+            </div>
             <br><br>
 
-        </section>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>

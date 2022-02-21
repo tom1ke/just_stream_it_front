@@ -22,6 +22,7 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page
             let imageURL = film.image_url;
             let filmImage = document.createElement("img");
             filmImage.setAttribute("src", [imageURL]);
+            filmImage.setAttribute("class", ["image"])
             filmContainer.appendChild(filmImage);
         })
     })
@@ -41,6 +42,7 @@ function getCategory(category) {
                 let imageURL = film.image_url;
                 let filmImage = document.createElement("img");
                 filmImage.setAttribute("src", [imageURL]);
+                filmImage.setAttribute("class", ["image"])
                 filmContainer.appendChild(filmImage);
             })
         })

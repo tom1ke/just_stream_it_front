@@ -23,27 +23,22 @@ body {
   font-size: 48px;
   font-style: normal;
   color: #e62b16;
+  margin-left: 30px;
 }
-.top-page__menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 70px;
-}
-.top-page__menu--drop-button, .top-page__menu--home {
+.top-page__menu--home, .top-page__menu--drop-button {
   background-color: rgba(0, 0, 0, 0);
   color: #FFF;
   text-decoration: none;
   padding: 16px;
   font-size: 16px;
   border: none;
+  margin-right: 100px;
 }
 .top-page__menu--dropdown-content {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: #656565FF;
   min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
 .top-page__menu--dropdown-content a {

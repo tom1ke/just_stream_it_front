@@ -29,26 +29,23 @@ body {
     font-size: 48px;
     font-style: normal;
     color: #e62b16;
+    margin-left: 30px;
   }
   &__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 70px;
-    &--drop-button, &--home {
+    &--home, &--drop-button {
       background-color: rgba(0, 0, 0, 0);
       color: $font-default-color;
       text-decoration: none;
       padding: 16px;
       font-size: 16px;
       border: none;
+      margin-right: 100px;
     }
     &--dropdown-content {
       display: none;
-      position: absolute;
+      position: fixed;
       background-color: $top-default-color;
       min-width: 160px;
-      box-shadow: 0 8px 16px 0 $top-shadow-color;
       z-index: 1;
     }
     &--dropdown-content a {

@@ -5,7 +5,15 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page
         return response.json();
     })
     .then(json => {
-        return document.getElementById("best-image").src = json.results[0].image_url;
+       fetch(json.results[0].url)
+           .then(response => {
+               return response.json();
+           })
+           .then(json => {
+               return document.getElementById("best-image").src = json.image_url,
+                   document.getElementById("best-title").innerText = json.title,
+                   document.getElementById("best-description").innerText = json.description;
+           })
     })
     .catch(error => {
         console.error(error);

@@ -13,10 +13,11 @@ body {
   align-items: center;
   overflow: hidden;
   position: fixed;
+  z-index: 999;
   top: 0;
   width: 100%;
   padding-right: 200px;
-  background: linear-gradient(180deg, #656565, rgba(0, 0, 0, 0.9));
+  background: linear-gradient(180deg, #656565FF, rgba(0, 0, 0, 0.9));
 }
 .top-page__title {
   font-size: 48px;
@@ -31,7 +32,7 @@ body {
 }
 .top-page__menu--drop-button, .top-page__menu--home {
   background-color: rgba(0, 0, 0, 0);
-  color: white;
+  color: #FFF;
   text-decoration: none;
   padding: 16px;
   font-size: 16px;
@@ -42,11 +43,11 @@ body {
   position: absolute;
   background-color: #656565FF;
   min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
 .top-page__menu--dropdown-content a {
-  color: white;
+  color: #FFF;
   padding: 12px 16px;
   text-decoration: none;
   display: block;

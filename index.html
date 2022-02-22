@@ -2,19 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="newstyle.css">
         <title>Just Stream It</title>
     </head>
     <body>
 
         <div class="top-page">
-            <h1>JUST STREAM IT</h1>
+            <h1 class="top-page__title">JUST STREAM IT</h1>
 
-            <nav id="top-menu">
-                <a href="index.html" id="home">Accueil</a>
-                <div class="dropdown">
-                    <button class="drop-button">Catégories</button>
-                    <div class="dropdown-content">
+            <nav id="top-page__menu">
+                <a href="index.html" class="top-page__menu--home">Accueil</a>
+                <div class="top-page__menu--dropdown">
+                    <button class="top-page__menu--drop-button">Catégories</button>
+                    <div class="top-page__menu--dropdown-content">
                         <a href="#most-rated">Mieux notés</a>
                         <a href="#fantasy">Fantaisie</a>
                         <a href="#sci-fi">Science-Fiction</a>
@@ -26,34 +26,34 @@
 
         <div class="films">
 
-            <div id="best">
-                <h2>Meilleur film</h2>
+            <div class="films__best">
+                <h2 class="films__best--title">Meilleur film</h2>
                 <br><br>
                 <img src="" id="best-image" alt=""/>
             </div>
             <br>
 
-            <div class="category" id="most-rated">
-                <h2>Films les mieux notés</h2>
-                <div class="image-container" id="most-rated-images"></div>
+            <div class="films__category" id="most-rated">
+                <h2 class="films__category--most-rated-title">Films les mieux notés</h2>
+                <div class="films__category--image-container" id="most-rated-images"></div>
             </div>
             <br>
 
-            <div class="category" id="fantasy">
+            <div class="films__category" id="fantasy">
                 <h2>Fantaisie</h2>
-                <div class="image-container" id="fantasy-images"></div>
+                <div class="films__category--image-container" id="fantasy-images"></div>
             </div>
             <br>
 
-            <div class="category" id="sci-fi">
+            <div class="films__category" id="sci-fi">
                 <h2>Science-Fiction</h2>
-                <div class="image-container" id="sci-fi-images"></div>
+                <div class="films__category--image-container" id="sci-fi-images"></div>
             </div>
             <br>
 
-            <div class="category" id="animation">
+            <div class="films__category" id="animation">
                 <h2>Animation</h2>
-                <div class="image-container" id="animation-images"></div>
+                <div class="films__category--image-container" id="animation-images"></div>
             </div>
             <br><br>
 

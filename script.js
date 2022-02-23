@@ -100,13 +100,13 @@ function generateModal (htmlId, filmURL) {
                 document.getElementById("modal-genre").innerText = json.genres;
                 document.getElementById("modal-date").innerText = json.year;
                 document.getElementById("modal-rated").innerText = json.rated;
-                document.getElementById("modal-score").innerText = json.imdb_score;
-                document.getElementById("modal-director").innerText = json.directors;
-                document.getElementById("modal-actors").innerText = json.actors;
-                document.getElementById("modal-duration").innerText = `${json.duration}mn`;
+                document.getElementById("modal-score").innerText = `${json.imdb_score}/10`;
+                document.getElementById("modal-director").innerText = `Réalisateur : ${json.directors}`;
+                document.getElementById("modal-actors").innerText = `Casting : ${json.actors}`;
+                document.getElementById("modal-duration").innerText = `Durée : ${json.duration}mn`;
                 document.getElementById("modal-origin").innerText = json.countries;
                 document.getElementById("modal-boxoffice").innerText = json.worldwide_gross_income;
-                document.getElementById("modal-description").innerText = json.description;
+                document.getElementById("modal-description").innerText = `Résumé : ${json.long_description}`;
             })
             .catch(error => {
                 console.error(error);

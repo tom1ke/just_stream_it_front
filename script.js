@@ -62,3 +62,55 @@ function getCategory(category) {
 getCategory("fantasy")
 getCategory("sci-fi")
 getCategory("animation")
+
+const modal = document.getElementsByClassName("modal");
+const modalOpen = document.getElementsByClassName("image");
+const modalClose = document.getElementsByClassName("modal__wrapper--close")[0];
+
+modalOpen.onclick = function () {
+    modal.style.display = "block";
+}
+
+modalClose.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// let modal = null
+//
+// const openModal = function (e) {
+//     e.preventDefault()
+//     const target = document.querySelector(e.target.getAttribute("href"))
+//     target.style.display = null
+//     modal = target
+//     modal.addEventListener("click", closeModal)
+//     modal.querySelector(".modal__wrapper--close").addEventListener("click", closeModal)
+//     modal.querySelector(".modal__wrapper--stop").addEventListener("click", stopPropagation)
+// }
+//
+// const closeModal = function (e) {
+//     if (modal === null) return
+//     e.preventDefault()
+//     modal.style.display = "none"
+//     modal.removeEventListener("click", closeModal)
+//     modal.querySelector(".modal__wrapper--close").removeEventListener("click", closeModal)
+//     modal = null
+// }
+//
+// const stopPropagation = function (e) {
+//     e.stopPropagation()
+// }
+// document.querySelectorAll("image").forEach(a => {
+//     a.addEventListener("click", openModal)
+// })
+//
+// window.addEventListener("keydown", function (e) {
+//     if (e.key === "Escape" || e.key === "Esc") {
+//         closeModal(e)
+//     }
+// })

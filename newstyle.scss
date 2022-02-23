@@ -125,11 +125,30 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   &__wrapper {
+    display: flex;
+    justify-content: space-between;
     overflow: auto;
     background-color: $body-default-color;
     color: $font-default-color;
-    border: 10px $font-default-color;
-    width: 50%;
+    width: 70%;
+    height: 80%;
     padding: 20px;
+    &--close {
+      order: 3;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: $font-default-color;
+    }
+    &--image {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+    &--info {
+      padding: 30px;
+    }
   }
 }

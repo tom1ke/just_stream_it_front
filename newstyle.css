@@ -111,12 +111,31 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 .modal__wrapper {
+  display: flex;
+  justify-content: space-between;
   overflow: auto;
   background-color: #000;
   color: #FFF;
-  border: 10px #FFF;
-  width: 50%;
+  width: 70%;
+  height: 80%;
   padding: 20px;
+}
+.modal__wrapper--close {
+  order: 3;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #FFF;
+}
+.modal__wrapper--image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+.modal__wrapper--info {
+  padding: 30px;
 }
 
 /*# sourceMappingURL=newstyle.css.map */

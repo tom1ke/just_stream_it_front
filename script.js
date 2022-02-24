@@ -87,16 +87,18 @@ function generateModal (htmlId, filmURL) {
     const modal = document.getElementById("modal");
     const modalOpen = document.getElementById(htmlId);
     const modalClose = document.getElementsByClassName("modal__wrapper--close")[0];
+    const body = document.querySelector("body")
 
     modalOpen.onclick = function () {
-        modal.style.display = "block";
+        modal.style.display = "flex";
+        body.style.overflow = "hidden";
         fetch(filmURL)
             .then(response => {
                 return response.json();
             })
             .then(json => {
                 document.getElementById("modal-image").src = json.image_url;
-                document.getElementById("modal-title").innerText = json.title;
+                document.getElementById("modal-title").innerText = json.original_title;
                 document.getElementById("modal-genre").innerText = json.genres;
                 document.getElementById("modal-date").innerText = json.year;
                 document.getElementById("modal-rated").innerText = json.rated;
@@ -115,11 +117,13 @@ function generateModal (htmlId, filmURL) {
 
     modalClose.onclick = function () {
         modal.style.display = "none";
+        body.style.overflow = "auto";
     }
 
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            body.style.overflow = "auto";
         }
     }
 }

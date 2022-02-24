@@ -2,6 +2,11 @@
   font-family: "Lucida Grande", sans-serif;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 $font-default-color: #FFF;
 $body-default-color: #000;
 $top-default-color: #656565FF;
@@ -82,7 +87,7 @@ body {
       }
       #best-image {
         margin-left: 70px;
-        width: 40%;
+        width: 30%;
         height: auto;
       }
     }
@@ -123,7 +128,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   background: rgba(35, 35, 35, 0.7);
+  animation: fadeIn 500ms;
   &__wrapper {
     display: flex;
     align-items: center;

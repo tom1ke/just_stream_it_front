@@ -121,7 +121,7 @@ function generateModal (htmlId, filmURL) {
     }
 
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
             body.style.overflow = "auto";
         }

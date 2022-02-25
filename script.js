@@ -10,7 +10,6 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page
                return response.json();
             })
             .then(json => {
-                console.log(json);
                 let filmURL = json.url;
                 document.getElementById("best-image").src = json.image_url;
                 document.getElementById("best-title").innerText = json.title;
@@ -127,3 +126,43 @@ function generateModal (htmlId, filmURL) {
         }
     }
 }
+
+function generateCarousel(carouselContainer, imageContainer) {
+    carouselContainer = document.getElementById(carouselContainer)
+    imageContainer = document.getElementById(imageContainer);
+    const leftButton = document.createElement("button");
+    const rightButton = document.createElement("button");
+    leftButton.setAttribute("class", ["left-button scroll-button"]);
+    leftButton.innerText = "<";
+    rightButton.setAttribute("class", ["right-button scroll-button"]);
+    rightButton.innerText = ">";
+    carouselContainer.appendChild(leftButton);
+    carouselContainer.appendChild(rightButton);
+    let scrollAmount = 0;
+
+    leftButton.onclick = function () {
+        imageContainer.scrollTo({
+            top: 0,
+            left: (scrollAmount -= 200),
+            behavior: "smooth"
+        });
+        if(scrollAmount < 0) {
+        scrollAmount = 0
+        }
+    }
+
+    rightButton.onclick = function () {
+        if(scrollAmount <= imageContainer.scrollWidth - imageContainer.clientWidth) {
+            imageContainer.scrollTo({
+                top: 0,
+                left: (scrollAmount += 200),
+                behavior: "smooth"
+            })
+        }
+    }
+}
+
+generateCarousel("most-rated-carousel", "most-rated-images")
+generateCarousel("fantasy-carousel", "fantasy-images")
+generateCarousel("sci-fi-carousel", "sci-fi-images")
+generateCarousel("animation-carousel", "animation-images")

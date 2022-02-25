@@ -97,32 +97,47 @@ body {
     &--title {
       padding-bottom: 25px;
     }
-    &--image-container {
+    &--carousel {
       display: flex;
-      overflow: scroll;
-      scrollbar-width: none;
-      padding: 30px;
-      .scroll-button {}
-      .image {
-        display: block;
-        padding: 5px;
-        flex: 1 1 0;
-        transition: transform 500ms;
-        max-width: 100%;
+      align-items: center;
+      justify-content: center;
+      .left-button {
+        order: 1;
+        margin-right: 30px;
+      }
+      .right-button {
+        order: 3;
+        margin-left: 30px;
+      }
+      .image-container {
+        order: 2;
+        display: flex;
+        overflow: scroll;
+        scrollbar-width: none;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        .image {
+          display: block;
+          padding: 5px;
+          flex: 1 1 0;
+          transition: transform 500ms;
+          max-width: 100%;
+        }
+      }
+      .image-container::-webkit-scrollbar {
+        display: none;
+      }
+      .image-container:focus-within .image,
+      &--image-container:hover .image {
+        transform: translateX((-10%));
+      }
+      .image-container .image:focus,
+      .image-container .image:hover {
+        transform: scale(1.2);
+        z-index: 1;
       }
     }
-    &--image-container::-webkit-scrollbar {
-      display: none;
-    }
-    &--image-container:focus-within .image,
-    &--image-container:hover .image {
-      transform: translateX((-10%));
-    }
-    &--image-container .image:focus,
-    &--image-container .image:hover {
-      transform: scale(1.2);
-      z-index: 1;
-    }
+
   }
 }
 

@@ -6,11 +6,11 @@
         <title>Just Stream It</title>
     </head>
     <body>
-        <div class="top-page">
+        <header class="top-page">
             <h1 class="top-page__title">JUST STREAM IT</h1>
 
             <nav id="top-page__menu">
-                <a href="#top" class="top-page__menu--home">Accueil</a>
+                <a class="top-page__menu--home">Accueil</a>
                 <div class="top-page__menu--dropdown">
                     <button class="top-page__menu--drop-button">Catégories</button>
                     <div class="top-page__menu--dropdown-content">
@@ -21,10 +21,9 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        <div class="films">
-
-            <div class="films__best">
+        </header>
+        <section class="films">
+            <article class="films__best">
                 <h2 class="films__best--title">Meilleur film</h2>
                 <div class="films__best--container">
                     <img src="" id="best-image" alt=""/>
@@ -34,36 +33,31 @@
                         <p id="best-description"></p>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="films__category" id="most-rated">
+            </article>
+            <article class="films__category" id="most-rated">
                 <h2 class="films__category--title">Films les mieux notés</h2>
                 <div class="films__category--carousel" id="most-rated-carousel">
                     <div class="image-container" id="most-rated-images"></div>
                 </div>
-            </div>
-            <br>
-            <div class="films__category" id="fantasy">
+            </article>
+            <article class="films__category" id="fantasy">
                 <h2 class="films__category--title">Fantaisie</h2>
                 <div class="films__category--carousel" id="fantasy-carousel">
                     <div class="image-container" id="fantasy-images"></div>
                 </div>
-            </div>
-            <br>
-            <div class="films__category" id="sci-fi">
+            </article>
+            <article class="films__category" id="sci-fi">
                 <h2 class="films__category--title">Science-Fiction</h2>
                 <div class="films__category--carousel" id="sci-fi-carousel">
                     <div class="image-container" id="sci-fi-images"></div>
                 </div>
-            </div>
-            <br>
-            <div class="films__category" id="animation">
+            </article>
+            <article class="films__category" id="animation">
                 <h2 class="films__category--title">Animation</h2>
                 <div class="films__category--carousel" id="animation-carousel">
                     <div class="image-container" id="animation-images"></div>
                 </div>
-            </div>
-            <br><br>
+            </article>
             <div class="modal" id="modal">
                 <div class="modal__wrapper">
                     <button class="modal__wrapper--close">X</button>
@@ -83,7 +77,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <script src="script.js"></script>
     </body>
 </html>

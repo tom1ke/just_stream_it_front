@@ -106,8 +106,12 @@ function generateModal (htmlId, filmURL) {
                 document.getElementById("modal-actors").innerText = `Casting : ${json.actors}`;
                 document.getElementById("modal-duration").innerText = `Durée : ${json.duration}mn`;
                 document.getElementById("modal-origin").innerText = json.countries;
-                document.getElementById("modal-boxoffice").innerText = json.worldwide_gross_income;
                 document.getElementById("modal-description").innerText = `Résumé : ${json.long_description}`;
+                document.getElementById("modal-boxoffice").innerText = json.worldwide_gross_income;
+                if (json.worldwide_gross_income != null) {
+                    return document.getElementById("modal-boxoffice").innerText =
+                        `Box-office : ${json.worldwide_gross_income}$`;
+                }
             })
             .catch(error => {
                 console.error(error);

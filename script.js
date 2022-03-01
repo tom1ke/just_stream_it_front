@@ -1,5 +1,10 @@
 
-
+/*
+Requête API pour alimenter la section "Meilleur film"
+Conversion de l'objet retourné en données json
+Image, titre et description vers éléments HTML associés
+Appel de la fonction generateModal() pour générer la fenêtre modale associée
+*/
 fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page=1")
     .then(response => {
         return response.json();
@@ -25,6 +30,12 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page
     })
 
 
+/*
+Requête API pour alimenter la section "Films les mieux notés"
+Conversion de l'objet retourné en données json
+Génération des balises HTML <img> alimentées par les urls des images
+Appel de la fonction generateModal() pour générer la fenêtre modale associée
+ */
 fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page=1")
     .then(response => {
         return response.json();
@@ -50,6 +61,14 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7&page
     })
 
 
+/*
+Fonction pour alimenter une catégorie avec une requête API
+category : catégorie concernée par la requête API
+
+Conversion de l'objet retourné en json
+Génération des balises HTML <img> alimentées par les urls des images
+Appel de la fonction generateModal() pour générer la fenêtre modale associée
+ */
 function getCategory(category) {
     fetch(`http://localhost:8000/api/v1/titles/?genre=${category}&page_size=7&page=1`)
         .then(response => {
@@ -77,11 +96,24 @@ function getCategory(category) {
 }
 
 
+/*
+Appel de la fonction getCategory() pour alimenter les sections "Fantaisie", "Science-fiction" et "Animation"
+ */
 getCategory("fantasy")
 getCategory("sci-fi")
 getCategory("animation")
 
 
+/*
+Fonction de génération de la fenêtre modale
+htmlId : ID de l'élément HTML cliqué
+filmURL : URL correspondant à l'élément cliqué pour effectuer la requête API et alimenter la fenêtre modale
+
+Les données retournées (converties en json) sont insérées dans les éléments HTML correspondants
+La donnée "worldwide_gross_income" n'est visible que si elle est présente dans les données récupérées
+
+Modification des attributs CSS pour afficher/cacher la fenêtre modale en fonction de l'action utilisateur
+ */
 function generateModal (htmlId, filmURL) {
     const modal = document.getElementById("modal");
     const modalOpen = document.getElementById(htmlId);
@@ -131,6 +163,16 @@ function generateModal (htmlId, filmURL) {
     }
 }
 
+
+/*
+Fonction de génération du carousel
+carouselContainer : élément HTML correspondant au conteneur du carousel d'une catégorie
+imageContainer : élément HTML correspondant au contenuer des images d'une catégorie
+
+Création des éléments HTML bouton gauche et droit
+
+Définition du comportement du carousel en fonction de l'action utilisateur
+ */
 function generateCarousel(carouselContainer, imageContainer) {
     carouselContainer = document.getElementById(carouselContainer)
     imageContainer = document.getElementById(imageContainer);
@@ -166,6 +208,10 @@ function generateCarousel(carouselContainer, imageContainer) {
     }
 }
 
+
+/*
+Appel de la fonction generateCarousel() pour générer les carousels de chaque catégorie
+ */
 generateCarousel("most-rated-carousel", "most-rated-images")
 generateCarousel("fantasy-carousel", "fantasy-images")
 generateCarousel("sci-fi-carousel", "sci-fi-images")

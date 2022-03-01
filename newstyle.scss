@@ -2,6 +2,9 @@
   font-family: "Lucida Grande", sans-serif;
 }
 
+/*
+Animation de fade in de la fenêtre modale
+ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -20,6 +23,9 @@ body {
   padding: 0;
 }
 
+/*
+Titre et menu de navigation
+ */
 .top-page {
   display: flex;
   justify-content: space-between;
@@ -67,6 +73,9 @@ body {
   }
 }
 
+/*
+Contenu de la page : meilleur film et catégories
+ */
 .films {
   width: 60%;
   max-width: 1000px;
@@ -74,6 +83,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  /*
+  Meilleur film
+   */
   &__best {
     &--container {
       display: flex;
@@ -93,6 +105,9 @@ body {
       }
     }
   }
+  /*
+  Catégories
+   */
   &__category {
     &--title {
       padding-bottom: 25px;
@@ -133,6 +148,9 @@ body {
       .image-container::-webkit-scrollbar {
         display: none;
       }
+      /*
+      Agrandissement de l'image quand le pointeur est dessus
+       */
       .image-container:focus-within .image,
       &--image-container:hover .image {
         transform: translateX((-10%));
@@ -147,6 +165,9 @@ body {
   }
 }
 
+/*
+Fenêtre modale
+ */
 .modal {
   display: none;
   z-index: 3;

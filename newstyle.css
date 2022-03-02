@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Lucida Grande", sans-serif;
+  font-family: Helvetica sans-serif;
 }
 /*
 Animation de fade in de la fenêtre modale
@@ -102,9 +102,6 @@ Contenu de la page : meilleur film et catégories
   width: 30%;
   height: auto;
 }
-.films__category--title {
-  padding-bottom: 25px;
-}
 .films__category--carousel {
   display: flex;
   align-items: center;
@@ -132,8 +129,8 @@ Contenu de la page : meilleur film et catégories
   display: flex;
   overflow: scroll;
   scrollbar-width: none;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 .films__category--carousel .image-container .image {
   display: block;

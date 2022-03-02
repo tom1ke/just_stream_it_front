@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Lucida Grande", sans-serif;
+  font-family: Helvetica sans-serif;
 }
 
 /*
@@ -110,7 +110,6 @@ Contenu de la page : meilleur film et catégories
    */
   &__category {
     &--title {
-      padding-bottom: 25px;
     }
     &--carousel {
       display: flex;
@@ -135,8 +134,8 @@ Contenu de la page : meilleur film et catégories
         display: flex;
         overflow: scroll;
         scrollbar-width: none;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 22px;
+        padding-bottom: 22px;
         .image {
           display: block;
           padding: 5px;
